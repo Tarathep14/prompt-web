@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Smart Green City: สำรวจการเรียนรู้ผ่าน AI Image, Desmos, Mermaid, LaTeX และ NotebookLM พร้อมหลักฐาน PDF ต้นฉบับ"
+    />
+    <title>Smart Green City — จากคำสั่ง สู่ความเข้าใจ</title>
+    <link rel="icon" href="assets/leaf.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="assets/vendor/mermaid.min.js"></script>
+    <script defer src="script.js?v=all-pages-2"></script>
+    <script id="slideManifest" type="application/json">
+      [
+        {
+          "page": 1,
+          "image": "assets/slides/page-01.jpg?v=03851ca168",
+          "text": "การ ใช้ prompt ในแง่ ต่างๆ\nวิชา GE931-1 ปญญาประดิษฐเบื้องตน\nนายธราเทพ บุญชู 2610717302008"
+        },
+        {
+          "page": 2,
+          "image": "assets/slides/page-02.jpg?v=03851ca168",
+          "text": "1.การสร้างรูป ด้วย AI (optional: https://www.canva.com/)"
+        },
+        {
+          "page": 3,
+          "image": "assets/slides/page-03.jpg?v=03851ca168",
+          "text": " Zero-shot prompt พร้อมผลลัพธ์"
+        },
+        {
+          "page": 4,
+          "image": "assets/slides/page-04.jpg?v=03851ca168",
+          "text": "Few-shot prompt  พร้อมผลลัพธ์"
+        },
+        {
+          "page": 5,
+          "image": "assets/slides/page-05.jpg?v=03851ca168",
+          "text": "prompt แรกกว้างเกินไป → AI ต้องเดาเองทุกอย่าง (สไตล์ สี ข้อความ กลุ่มเปาหมาย) → ผลลัพธ์อาจสวยแต่ไม่ตรงจุดประสงค์การใช้งานจริง\nprompt ทีสองระบุ \"ขนาด-สไตล์-สี-ข้อความ-กลุ่มเปาหมาย\" ชัดเจน → ควบคุมทิศทางงานออกแบบได้แม่นยํากว่า ลดรอบแก้ไข\nข้อคิด: ยิงระบุ \"บริบทการใช้งานปลายทาง\" ชัดเจนเท่าไร ผลลัพธ์จาก AI ยิงใช้งานได้จริงมากขึนเท่านัน\nZero shot Few shot\n การสะทอนการเรียนรู"
+        },
+        {
+          "page": 6,
+          "image": "assets/slides/page-06.jpg?v=03851ca168",
+          "text": "2.การสร้างกลางอธิบายความสัมพันธ์ทาง คณิตศาสตร์\n(https://www.desmos.com/calculator?lang=th)"
+        },
+        {
+          "page": 7,
+          "image": "assets/slides/page-07.jpg?v=03851ca168",
+          "text": " Zero-shot prompt พร้อมผลลัพธ์"
+        },
+        {
+          "page": 8,
+          "image": "assets/slides/page-08.jpg?v=03851ca168",
+          "text": "Few-shot prompt  พร้อมผลลัพธ์"
+        },
+        {
+          "page": 9,
+          "image": "assets/slides/page-09.jpg?v=03851ca168",
+          "text": " การสะท้อนการเรียนรู้\n • prompt แรกได้แค่กราฟนิงของสมการเดียว ไม่เห็น \"ความสัมพันธ์\" ระหว่างตัวแปรกับรูปร่างกราฟจริงๆ\n • prompt ทีสองเพิมมิติ interactive (slider) ทําให้เห็นการเปลียนแปลงของกราฟตามค่า a, b, c แบบเรียลไทม์ ตรงตามจุดประสงค์ \"อธิบายความสัมพันธ์\nทางคณิตศาสตร์\" มากกว่า\n • ข้อคิด: การระบุ \"วัตถุประสงค์การใช้งาน\" (เพือสอน, เพือให้เห็นความสัมพันธ์แบบโต้ตอบได้) ทําให้ AI แนะนําเครืองมือ/ฟเจอร์ของ Desmos ทีเหมาะ\nสมกว่าการขอกราฟเฉยๆ\nZero shot Few shot\n"
+        },
+        {
+          "page": 10,
+          "image": "assets/slides/page-10.jpg?v=03851ca168",
+          "text": "3.การสร้าง diagrams จาก mermaid code (https://mermaid.ai/)"
+        },
+        {
+          "page": 11,
+          "image": "assets/slides/page-11.jpg?v=03851ca168",
+          "text": " Zero-shot prompt"
+        },
+        {
+          "page": 12,
+          "image": "assets/slides/page-12.jpg?v=03851ca168",
+          "text": "ผลลัพธ์ diagram ของ Zero shot "
+        },
+        {
+          "page": 13,
+          "image": "assets/slides/page-13.jpg?v=03851ca168",
+          "text": "Few shot prompt"
+        },
+        {
+          "page": 14,
+          "image": "assets/slides/page-14.jpg?v=03851ca168",
+          "text": "ผลลัพธ์ diagram ของ Few shot prompt"
+        },
+        {
+          "page": 15,
+          "image": "assets/slides/page-15.jpg?v=03851ca168",
+          "text": " การสะท้อนการเรียนรู้\nprompt แรก (ทีระบุคําว่า \"mermaid\" ไปแล้ว) ให้ผลลัพธ์ทีค่อนข้างสมบูรณ์ตังแต่ต้น มี decision node และ error loop มาให้ครบ แต่ diagram\nยังดูรก เพราะมีขันตอนเยอะ (14 ขันตอน) ปนกันหมดทังฝงลูกค้าและฝงหลังบ้าน ไม่มีสีช่วยไฮไลต์จุดสําคัญ\n prompt ทีสองเพิม การจัดโครงสร้าง (แบ่ง subgraph ฝงลูกค้า/หลังบ้าน) และ การสือความหมายด้วยสี (เขียว = สําเร็จ, แดง/ส้ม = ผิดพลาด)\nทําให้ diagram เดิมทีถูกต้องอยู่แล้วในเชิงตรรกะ กลายเปน diagram ที สือสารและอ่านง่ายขึนมาก เหมาะกับการนําเสนอจริง\n ข้อคิด: การเพิมรายละเอียดใน prompt ไม่จําเปนต้องเปนการ \"แก้ตรรกะทีผิด\" เสมอไป บางครังก็เปนการ ปรับปรุงด้าน visual/organization\nของผลลัพธ์ทีถูกต้องอยู่แล้วให้สือสารได้ดีขึน — แสดงว่า zero-shot กับ few-shot ต่างกันได้ทังใน \"เนือหา\" และ \"การนําเสนอเนือหา\""
+        },
+        {
+          "page": 16,
+          "image": "assets/slides/page-16.jpg?v=03851ca168",
+          "text": "4.การสร้าง บทความ หรือ หนังสือ จาก latex (https://www.overleaf.com/)"
+        },
+        {
+          "page": 17,
+          "image": "assets/slides/page-17.jpg?v=03851ca168",
+          "text": " Zero-shot prompt  พร้อมผลลัพธ์"
+        },
+        {
+          "page": 18,
+          "image": "assets/slides/page-18.jpg?v=03851ca168",
+          "text": "ผลลัพธ Zero shot prompt"
+        },
+        {
+          "page": 19,
+          "image": "assets/slides/page-19.jpg?v=03851ca168",
+          "text": "Few shot prompt"
+        },
+        {
+          "page": 20,
+          "image": "assets/slides/page-20.jpg?v=03851ca168",
+          "text": "ผลลัพธ Few shot prompt"
+        },
+        {
+          "page": 21,
+          "image": "assets/slides/page-21.jpg?v=03851ca168",
+          "text": "prompt แรกได้แค่โครงสร้างบทความทัวไป ไม่มีเนือหาจริงเกียวกับหัวข้อ และอาจมีปญหาภาษาไทย/ฟอนต์เพราะไม่ได้ระบุ\nprompt ทีสองระบุทังเนือหาทีต้องการ (ประเด็นสิงแวดล้อมในเมือง) และรายละเอียดเทคนิค (compiler, package, ฟอนต์) ทําให้ได้บทความที\nทัง compile ได้จริงและมีเนือหาตรงหัวข้อ\nข้อคิด: งาน LaTeX ต้องระบุทัง 2 มิติพร้อมกัน — เนือหา (จะเขียนเรืองอะไร) และ เทคนิค (จะ compile ยังไง ใช้ฟอนต์/package อะไร) ขาดมิติ\nไหนไปผลลัพธ์ก็ใช้งานไม่ได้จริง\n การสะท้อนการเรียนรู้"
+        },
+        {
+          "page": 22,
+          "image": "assets/slides/page-22.jpg?v=03851ca168",
+          "text": "5.การใช้งาน การสร้าง slide สรุปงานด้วย NotebookLM\n(https://notebook.google/?hl=th)"
+        },
+        {
+          "page": 23,
+          "image": "assets/slides/page-23.jpg?v=03851ca168",
+          "text": " Zero-shot prompt "
+        },
+        {
+          "page": 24,
+          "image": "assets/slides/page-24.jpg?v=03851ca168",
+          "text": "ผลลัพธ์ของ Zero shot prompt"
+        },
+        {
+          "page": 25,
+          "image": "assets/slides/page-25.jpg?v=03851ca168",
+          "text": "Few shot prompt"
+        },
+        {
+          "page": 26,
+          "image": "assets/slides/page-26.jpg?v=03851ca168",
+          "text": "ผลลัพธ Few shot prompt"
+        },
+        {
+          "page": 27,
+          "image": "assets/slides/page-27.jpg?v=03851ca168",
+          "text": "ผลลัพธ์แรก (Zero-shot): ได้บทสรุปแบบแยกส่วนของแต่ละไฟล์และข้อความเชือมโยงกว้างๆ ยังไม่เห็นการประยุกต์ใช้งานเชิงวิชาการหรือการนํา\nเสนอจริง\nผลลัพธ์ใหม่ (Few-shot): ระบบสามารถหลอมรวมข้อมูลข้ามมิติ (Cross-source Integration) โดยนําสมการคณิตศาสตร์จากกราฟ Desmos และ\nกระบวนการของผังระบบ มาบูรณาการแก้ปญหาสิงแวดล้อมตามบทความวิจัยได้อย่างลงตัว ออกมาเปนชุดสไลด์บรรยาย 5 หน้าพร้อม Speaker\nNotes\nสิงทีได้เรียนรู้: NotebookLM มีจุดเด่นอย่างมากในการเชือมโยงเอกสารหลายรูปแบบ (PDF, รูปกราฟ, ผังระบบ) หากเราใช้คําสังแบบ Few-shot ที\nกําหนดบทบาท, กําหนดกรอบแนวคิด (Smart Green City) และระบุโครงสร้างผลลัพธ์ทีต้องการอย่างชัดเจน AI จะสามารถสังเคราะห์องค์ความรู้ข้าม\nสายงานให้ออกมาเปนแผนงานหรือสือนําเสนอระดับมืออาชีพได้อย่างแม่นยํา\n การสะท้อนการเรียนรู้"
+        },
+        {
+          "page": 28,
+          "image": "assets/slides/page-28.jpg?v=03851ca168",
+          "text": "6.การเขียน website เพือไปฝากบน github (https://github.com/)"
+        },
+        {
+          "page": 29,
+          "image": "assets/slides/page-29.jpg?v=03851ca168",
+          "text": " Zero-shot prompt "
+        },
+        {
+          "page": 30,
+          "image": "assets/slides/page-30.jpg?v=03851ca168",
+          "text": "ผลลัพธ์ของ Zero shot prompt"
+        },
+        {
+          "page": 31,
+          "image": "assets/slides/page-31.jpg?v=03851ca168",
+          "text": "Few shot prompt"
+        },
+        {
+          "page": 32,
+          "image": "assets/slides/page-32.jpg?v=03851ca168",
+          "text": "ผลลัพธ Few shot prompt"
+        },
+        {
+          "page": 33,
+          "image": "assets/slides/page-33.jpg?v=03851ca168",
+          "text": " การสะท้อนการเรียนรู้\np r o m p t  แ ร ก  ( ภ า พ  1 )  เ ป น ค ํา ส ัง เ ช ิง ส น ท น า ท ัว ไ ป  —  บ อ ก ใ ห ้อ ่า น  P D F  แ ล ้ว ช ่ว ย ค ิด โ ค ้ด ส ร ้า ง เ ว ็บ ไ ซ ต ์พ ร ้อ ม  d e p l o y  เ ป น  z i p  แ ม ้จ ะ ม ีร า ย ล ะ เ อ ีย ด พ อ\nส ม ค ว ร  ( ส ี,  ฟ อ น ต ์,  โ ค ร ง ส ร ้า ง ไ ฟ ล ์)  แ ต ่ไ ม ่ไ ด ้ก ํา ห น ด บ ท บ า ท ข อ ง  A I  ช ัด เ จ น  ไ ม ่ไ ด ้ร ะ บ ุ \" แ ห ล ่ง ข ้อ ม ูล ท ีเ ช ือ ถ ือ ไ ด ้\"  แ ล ะ ไ ม ่ไ ด ้ห ้า ม ก า ร ก ุเน ือ ห า  —  ท ํา ใ ห ้ A I  ม ี\nอ ิส ร ะ ต ีค ว า ม เ น ือ ห า เ อ ง ไ ด ้ใ น ร ะ ด ับ ห น ึง\np r o m p t  ท ีส อ ง  ( ภ า พ  2 )  ใ ช ้โ ค ร ง ส ร ้า ง แ บ บ  \" A G E N T  M O D E \"  ท ีล ะ เ อ ีย ด ก ว ่า ม า ก :  ก ํา ห น ด  R O L E  ช ัด เ จ น  ( s e n i o r  f r o n t e n d  e n g i n e e r  +  i n t e r a c t i v e\nw e b  d e s i g n e r ) ,  ก ํา ห น ด  S O U R C E  O F  T R U T H  ว ่า  P D F  2 7  ห น ้า ค ือ แ ห ล ่ง ข ้อ ม ูล ท ีถ ูก ต ้อ ง เ พ ีย ง แ ห ล ่ง เ ด ีย ว ส ํา ห ร ับ เ น ือ ห า ท ัง ห ม ด ,  ม ีก ฎ ห ้า ม ช ัด เ จ น ว ่า  \" D o\nn o t  i n v e n t  u n s u p p o r t e d  a c a d e m i c / p r o j e c t  f a c t s \" ,  แ ล ะ ก ํา ห น ด โ ค ร ง เ ร ือ ง ข อ ง ก า ร น ํา เ ส น อ  ( Z e r o - s h o t  →  F e w - s h o t  →  R e s u l t  →\nC o m p a r i s o n / R e f l e c t i o n )  ไ ว ้ล ่ว ง ห น ้า\nผ ล ล ัพ ธ ์ต ่า ง ก ัน ช ัด เ จ น :  p r o m p t  ท ีส อ ง ไ ด ้ผ ล ล ัพ ธ ์ท ีผ ่า น ก า ร ท ด ส อ บ จ ร ิง  ( ร ัน ค ํา ส ัง ,  ต ร ว จ ส อ บ ก ร า ฟ / n a v i g a t i o n / P D F  r e n d e r i n g / r e s p o n s i v e )  แ ล ะ\nเ ช ือ ม โ ย ง ก ับ เ น ือ ห า จ ร ิง ใ น โ ป ร เ จ ก ต ์อ ย ่า ง เ ค ร ่ง ค ร ัด  ใ น ข ณ ะ ท ี p r o m p t  แ ร ก ใ ห ้พ ืน ท ี A I  ต ัด ส ิน ใ จ เ ช ิง ส ร ้า ง ส ร ร ค ์ม า ก ก ว ่า  ซ ึง เ ห ม า ะ ก ับ ง า น อ อ ก แ บ บ เ บ ือ ง\nต ้น  แ ต ่เ ส ีย ง ต ่อ ก า ร ใ ส ่เ น ือ ห า ท ีไ ม ่ไ ด ้อ ้า ง อ ิง จ า ก เ อ ก ส า ร จ ร ิง ม า ก ก ว ่า\nข ้อ ค ิด :  ง า น ท ีต ้อ ง อ ้า ง อ ิง ข ้อ เ ท ็จ จ ร ิง จ า ก เ อ ก ส า ร เ ฉ พ า ะ  ( ไ ม ่ใ ช ่แ ค ่ง า น ส ร ้า ง ส ร ร ค ์ท ัว ไ ป )  ต ้อ ง ร ะ บ ุ 3  อ ย ่า ง ใ ห ้ช ัด ใ น p r o m p t :  ( 1 )  บ ท บ า ท  ข อ ง  A I  ท ีต ้อ ง ก า ร\n( 2 )  แ ห ล ่ง ข ้อ ม ูล ท ีเ ช ือ ถ ือ ไ ด ้เ พ ีย ง แ ห ล ่ง เ ด ีย ว  ( s o u r c e  o f  t r ut h )  แ ล ะ  ( 3 )  ก ฎ ห ้า ม ก ุข ้อ ม ูล  อ ย ่า ง ช ัด เ จ น  —  ย ิง ง า น ม ีค ว า ม เ ส ีย ง ส ูง ท ี A I  จ ะ  \" แ ต ่ง เ ต ิม \"\nเ น ือ ห า ท ีฟ ง ดู ส ม เ ห ต ุส ม ผ ล แ ต ่ไ ม ่ม ีอ ย ู่จ ร ิง  ย ิง ต ้อ ง ใ ส ่ g ua r d r a i l  แ บ บ น ีต ัง แ ต ่ต ้น  ไ ม ่ใ ช ่แ ค ่ร ะ บ ุ \" จ ะ ท ํา อ ะ ไ ร \"  แ ต ่ต ้อ ง ร ะ บ ุ \" จ ะ ย ึด อ ะ ไ ร เ ป น ค ว า ม จ ร ิง \"  ด ้ว ย"
+        }
+      ]
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">ข้ามไปเนื้อหา</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a href="#home" class="brand"
+          ><img src="assets/leaf.svg" width="32" height="32" alt="" /> Smart
+          Green City</a
+        ><button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="เปิดเมนู"
+          aria-controls="siteNav"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="เมนูหลัก">
+          <a href="#concept">แนวคิด</a><a href="#model">ทดลองกราฟ</a
+          ><a href="#lab">Prompt Lab</a><a href="#slides">เอกสารต้นฉบับ</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="wrap hero" id="home">
+        <div class="hero-copy">
+          <p class="hero-kicker">การอนุรักษ์สิ่งแวดล้อมในเมือง</p>
+          <h1>จากคำสั่ง<br />สู่ความเข้าใจ<br />เมืองสีเขียว</h1>
+          <p class="hero-lede">
+            สำรวจว่าบริบท ตัวอย่าง และข้อกำหนด เปลี่ยนผลลัพธ์ของ AI ได้อย่างไร
+            ผ่านการเรียนรู้ 6 หัวข้อในโครงงาน Smart Green City
+          </p>
+          <div class="actions">
+            <a class="cta" href="#lab">สำรวจ Prompt Lab</a
+            ><a class="text-link" href="#concept">เริ่มอ่านโครงงาน</a>
+          </div>
+          <p class="hero-meta">
+            GE931-1 ปัญญาประดิษฐ์เบื้องต้น<br />ผลงานการเรียนรู้ของ นายธราเทพ
+            บุญชู
+          </p>
+        </div>
+        <div class="hero-visual">
+          <div class="poster-mat">
+            <img
+              src="assets/ai-1.png"
+              alt="โปสเตอร์ Few-shot รักษ์โลก เริ่มที่เรา จาก PDF หน้า 5"
+              fetchpriority="high"
+            /><span class="poster-tag">ผลงานจริงจากเอกสาร / หน้า 5</span>
+          </div>
+          <div class="visual-note">
+            <span>คำสั่งที่ชัดขึ้น</span><strong>ทิศทางงานที่ชัดเจน</strong
+            ><span>ขนาด · สไตล์ · สี · ข้อความ · ผู้ชม</span>
+          </div>
+        </div>
+      </section>
+      <div class="journey-strip wrap" aria-label="กระบวนการเรียนรู้">
+        <span>Zero-shot</span><span aria-hidden="true">→</span
+        ><span>Few-shot</span><span aria-hidden="true">→</span
+        ><span>Result</span><span aria-hidden="true">→</span
+        ><span>Reflection</span>
+      </div>
+      <section class="section wrap" id="concept">
+        <div class="section-heading">
+          <p class="topic-label">แนวคิดของโครงงาน</p>
+          <h2>หลายเครื่องมือ<br />หนึ่งบริบทการเรียนรู้</h2>
+        </div>
+        <div class="concept-copy">
+          <p class="lead">
+            มลพิษ ขยะ และพื้นที่สีเขียวที่ลดลง
+            เป็นประเด็นที่เอกสารนำมาใช้ตั้งโจทย์เรื่องการอนุรักษ์สิ่งแวดล้อมในเมือง
+          </p>
+          <p>
+            จากโปสเตอร์สื่อสารแนวคิด สู่กราฟที่ทดลองได้ ผังที่อ่านง่าย
+            และบทความภาษาไทย ก่อนให้ NotebookLM เชื่อมข้อมูลเป็นงานนำเสนอ Smart
+            Green City
+          </p>
+          <p class="source-note">
+            สรุปจากหน้า 19 และ 25–27 เนื้อหาเว็บไซต์ถอดความจากเอกสาร
+            ส่วนภาพและหน้าสไลด์แสดงหลักฐานต้นฉบับ
+          </p>
+          <button class="text-link source-button" data-page="25">
+            ดูที่มาของแนวคิด · หน้า 25
+          </button>
+        </div>
+      </section>
+      <section class="section section-alt" id="ai-image">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="topic-label">AI Image / หน้า 3–5</p>
+            <h2>เมื่อภาพมีผู้ชมที่ชัดเจน</h2>
+            <p>
+              จากคำขอโปสเตอร์ทั่วไป สู่โจทย์ที่กำหนดการใช้งานในโรงเรียนมัธยม
+            </p>
+          </div>
+          <div class="ai-layout">
+            <div class="comparison-pictures">
+              <figure>
+                <img
+                  src="assets/ai-0.png"
+                  loading="lazy"
+                  alt="ผลลัพธ์ Zero-shot ใน PDF หน้า 5"
+                />
+                <figcaption>Zero-shot · แนวทางกว้าง</figcaption>
+              </figure>
+              <figure>
+                <img
+                  src="assets/ai-1.png"
+                  loading="lazy"
+                  alt="ผลลัพธ์ Few-shot ใน PDF หน้า 5"
+                />
+                <figcaption>Few-shot · มีข้อกำหนด</figcaption>
+              </figure>
+            </div>
+            <div class="ai-copy">
+              <h3>“รักษ์โลก เริ่มที่เรา”</h3>
+              <p>
+                โจทย์ที่ปรับแล้วระบุโปสเตอร์แนวตั้ง สไตล์ minimalist
+                โทนเขียว–ฟ้า ภาพต้นไม้และโลก ตัวอักษรอ่านง่าย สำหรับนักเรียนอายุ
+                12–18 ปี
+              </p>
+              <p class="reflection">
+                บทเรียนจากหน้า 5:
+                การระบุบริบทปลายทางช่วยควบคุมทิศทางงานออกแบบและลดรอบแก้ไข
+              </p>
+              <button class="text-link" data-topic="image">
+                เปรียบเทียบคำสั่งและผลลัพธ์
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="model">
+        <div class="wrap model-grid">
+          <div class="model-text">
+            <p class="topic-label">Desmos / หน้า 7–9</p>
+            <h2>ขยับตัวแปร<br />มองเห็นความสัมพันธ์</h2>
+            <p>
+              หน้า 8 เปลี่ยนกราฟเป็นแบบจำลองโต้ตอบ โดยใช้
+              <strong>y = A · e<sup>−kt</sup></strong> และจุดครึ่งชีวิต
+              ทดลองปรับค่าเพื่อสังเกตสิ่งที่เปลี่ยนไป
+            </p>
+            <div class="control-panel">
+              <div class="control-group">
+                <label for="sliderA"
+                  ><span>ปริมาณเริ่มต้น A</span
+                  ><output id="valA">100</output></label
+                ><input
+                  type="range"
+                  id="sliderA"
+                  min="50"
+                  max="500"
+                  step="10"
+                  value="100"
+                />
+              </div>
+              <div class="control-group">
+                <label for="sliderK"
+                  ><span>อัตราการลด k (ต่อปี)</span
+                  ><output id="valK">0.15</output></label
+                ><input
+                  type="range"
+                  id="sliderK"
+                  min="0.05"
+                  max="0.50"
+                  step="0.01"
+                  value="0.15"
+                />
+              </div>
+              <button id="resetGraph" class="text-link">
+                คืนค่า A = 100, k = 0.15
+              </button>
+            </div>
+            <p class="source-note">
+              แบบจำลองเพื่อการเรียนรู้
+              ไม่ใช่ข้อมูลตรวจวัดหรือคำพยากรณ์ของเมืองจริง ช่วง slider
+              เป็นช่วงทดลองของเว็บไซต์
+            </p>
+            <button class="text-link" data-topic="desmos">
+              ดูคำสั่ง Desmos ต้นฉบับ
+            </button>
+          </div>
+          <div class="model-visual">
+            <div class="graph-heading">
+              <span>Exponential decay</span
+              ><strong>y = A · e<sup>−kt</sup></strong>
+            </div>
+            <svg
+              role="img"
+              aria-label="กราฟแบบจำลอง y เท่ากับ A คูณ e ยกกำลังลบ kt พร้อมจุดครึ่งชีวิต"
+              class="decay-svg"
+              viewBox="0 0 500 300"
+            >
+              <!-- Gridlines -->
+              <line
+                x1="50"
+                y1="250"
+                x2="470"
+                y2="250"
+                stroke="#E2E2E2"
+                stroke-width="1"
+              />
+              <line
+                x1="50"
+                y1="30"
+                x2="50"
+                y2="250"
+                stroke="#E2E2E2"
+                stroke-width="1"
+              />
+
+              <!-- Axes -->
+              <line x1="50" y1="250" x2="480" y2="250" class="axis" />
+              <line x1="50" y1="20" x2="50" y2="250" class="axis" />
+
+              <!-- Axes Labels -->
+              <text x="480" y="270" class="label" text-anchor="end">
+                เวลา (ปี)
+              </text>
+              <text x="35" y="30" class="label" text-anchor="start">
+                ปริมาณมลพิษ (y)
+              </text>
+
+              <text x="45" y="254" class="label" text-anchor="end">0</text>
+              <text x="45" y="166" class="label" text-anchor="end">200</text>
+              <text x="45" y="78" class="label" text-anchor="end">400</text>
+              <text x="190" y="266" class="label">10</text>
+              <text x="330" y="266" class="label">20</text>
+              <text x="460" y="266" class="label">30</text>
+              <path id="graphPath" class="curve" d="" />
+
+              <!-- Half life indicators -->
+              <line
+                id="halfLifeLineX"
+                class="guide"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="0"
+                style="display: none"
+              />
+              <line
+                id="halfLifeLineY"
+                class="guide"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="0"
+                style="display: none"
+              />
+              <circle
+                id="halfLifePoint"
+                class="point"
+                r="6"
+                cx="0"
+                cy="0"
+                style="display: none"
+              />
+
+              <text x="250" y="285" class="label small" text-anchor="middle">
+                * ทดลองปรับค่าตัวแปรเพื่อจำลองจุดเปลี่ยนแบบครึ่งชีวิต
+              </text>
+            </svg>
+            <div class="graph-result" aria-live="polite">
+              <span>เวลาที่ y เหลือ A/2</span
+              ><strong><span id="textHalfLife">4.6</span> ปี</strong
+              ><small>t½ = ln(2) / k</small>
+            </div>
+            <p>
+              เพิ่ม k → ครึ่งชีวิตสั้นลง<br />เปลี่ยน A → ปริมาณเปลี่ยน
+              แต่ครึ่งชีวิตคงเดิม
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section section-alt" id="system">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="topic-label">Mermaid / หน้า 11–15</p>
+            <h2>ตรรกะที่ถูกต้อง<br />ยังต้องสื่อสารให้เข้าใจ</h2>
+            <p>
+              Zero-shot มี decision node และ error loop อยู่แล้ว ส่วน Few-shot
+              เพิ่ม subgraph และใช้สีแยกสถานะ เพื่อช่วยให้อ่านผังง่ายขึ้น
+            </p>
+          </div>
+          <div class="diagram-box">
+            <p class="source-note">
+              ผังสรุปบทเรียนจากหน้า 15 จัดทำสำหรับเว็บไซต์
+            </p>
+            <div id="learningDiagram" class="mermaid">
+              flowchart LR subgraph Z["Zero-shot"] A["ตรรกะครบ"] -->
+              B["หลายขั้นตอนปนกัน"] end subgraph F["Few-shot"] C["แบ่งกลุ่มด้วย
+              subgraph"] --> D["ใช้สีแยกสถานะ"] end B --> C D -->
+              E["อ่านและนำเสนอได้ชัดขึ้น"] style E
+              fill:#285c45,color:#fff,stroke:#285c45
+            </div>
+          </div>
+          <p class="source-note">
+            หน้า 11–14 ใช้ระบบสั่งซื้อออนไลน์เป็นแบบฝึกหัด Mermaid
+            จึงแสดงในฐานะหลักฐานการเรียนรู้ ไม่ใช่ผังระบบสิ่งแวดล้อม
+          </p>
+          <button class="text-link" data-topic="mermaid">
+            เปิดกระบวนการและหลักฐาน Mermaid
+          </button>
+        </div>
+      </section>
+      <section class="section wrap" id="latex">
+        <div class="section-heading">
+          <p class="topic-label">LaTeX / Overleaf / หน้า 17–21</p>
+          <h2>เขียนให้ตรงเรื่อง<br />และทำให้ใช้งานได้</h2>
+          <p>ข้อกำหนดสองด้านที่ต้องมาพร้อมกันในคำสั่งสร้างบทความภาษาไทย</p>
+        </div>
+        <div class="requirements">
+          <article>
+            <span class="requirement-symbol" aria-hidden="true">Aa</span>
+            <h3>เนื้อหาที่ต้องการ</h3>
+            <p>
+              บทคัดย่อ บทนำ วิธีการ ผลการศึกษา และสรุป ครอบคลุมมลพิษ ขยะ
+              พื้นที่สีเขียว และแนวทางอนุรักษ์ เช่น สวนแนวตั้งและการจัดการขยะ
+            </p>
+          </article>
+          <article>
+            <span class="requirement-symbol" aria-hidden="true">{ }</span>
+            <h3>รายละเอียดทางเทคนิค</h3>
+            <p>
+              article ขนาด A4 · XeLaTeX · fontspec · polyglossia · ฟอนต์ Loma ·
+              การอ้างอิง APA ด้วย biblatex · เลขหน้ามุมล่างขวา
+            </p>
+          </article>
+        </div>
+        <p class="reflection">
+          หน้า 21 เน้นว่าผลลัพธ์ต้องตอบทั้ง “จะเขียนอะไร” และ “จะ compile
+          อย่างไร”
+        </p>
+        <button class="text-link" data-topic="latex">
+          ดูคำสั่งและบทความที่ได้
+        </button>
+      </section>
+      <section class="section capstone" id="notebook">
+        <div class="wrap">
+          <div class="capstone-heading">
+            <div>
+              <p class="topic-label">NotebookLM / หน้า 23–27</p>
+              <h2>เชื่อมแหล่งข้อมูล<br />ให้กลายเป็นเรื่องเดียว</h2>
+            </div>
+            <p>
+              จากการสรุปไฟล์แยกส่วน สู่การเชื่อมบทความ กราฟ Desmos และผังระบบ
+              ภายใต้กรอบ Smart Green City พร้อมโครงสร้างงานนำเสนอที่กำหนดไว้
+            </p>
+          </div>
+          <div class="source-flow">
+            <span>บทความสิ่งแวดล้อม</span><span>กราฟ Desmos</span
+            ><span>ผังระบบ</span><strong>NotebookLM → งานนำเสนอ</strong>
+          </div>
+          <figure class="capstone-figure">
+            <img
+              src="assets/slides/page-26.jpg"
+              loading="lazy"
+              alt="PDF หน้า 26 แสดงผลงาน NotebookLM ทั้งห้าสไลด์"
+            />
+            <figcaption>
+              ผลลัพธ์จริงหน้า 26 / หน้า 27 อธิบายผลลัพธ์เป็นสไลด์ 5 หน้าพร้อม
+              Speaker Notes
+            </figcaption>
+          </figure>
+          <button class="light-button" data-topic="notebook">
+            สำรวจกระบวนการสังเคราะห์
+          </button>
+        </div>
+      </section>
+      <section class="section wrap" id="lab">
+        <div class="section-heading">
+          <p class="topic-label">Prompt Lab</p>
+          <h2>อ่านคำสั่ง<br />เทียบกับหลักฐานจริง</h2>
+          <p>
+            เลือกเครื่องมือและขั้นตอนเพื่ออ่านบทสรุป พร้อมหน้าต้นฉบับในเว็บไซต์
+          </p>
+        </div>
+        <div class="topic-tabs" role="tablist" aria-label="เครื่องมือ">
+          <button
+            role="tab"
+            id="tab-image"
+            aria-controls="labPanel"
+            aria-selected="true"
+            data-lab="image"
+          >
+            AI Image</button
+          ><button
+            role="tab"
+            id="tab-desmos"
+            aria-controls="labPanel"
+            aria-selected="false"
+            tabindex="-1"
+            data-lab="desmos"
+          >
+            Desmos</button
+          ><button
+            role="tab"
+            id="tab-mermaid"
+            aria-controls="labPanel"
+            aria-selected="false"
+            tabindex="-1"
+            data-lab="mermaid"
+          >
+            Mermaid</button
+          ><button
+            role="tab"
+            id="tab-latex"
+            aria-controls="labPanel"
+            aria-selected="false"
+            tabindex="-1"
+            data-lab="latex"
+          >
+            LaTeX</button
+          ><button
+            role="tab"
+            id="tab-notebook"
+            aria-controls="labPanel"
+            aria-selected="false"
+            tabindex="-1"
+            data-lab="notebook"
+          >
+            NotebookLM</button
+          ><button
+            role="tab"
+            id="tab-website"
+            aria-controls="labPanel"
+            aria-selected="false"
+            tabindex="-1"
+            data-lab="website"
+          >
+            Website
+          </button>
+        </div>
+        <div id="labPanel" role="tabpanel" aria-labelledby="tab-image">
+          <div
+            id="stageButtons"
+            class="stage-buttons"
+            role="group"
+            aria-label="ขั้นตอน"
+          ></div>
+          <div class="lab-grid">
+            <div>
+              <p id="labSource" class="topic-label"></p>
+              <h3 id="labTitle"></h3>
+              <p id="labText"></p>
+              <p id="labNote" class="source-note"></p>
+              <button id="labOpen" class="text-link">
+                ดูหน้านี้ใน Presentation Viewer
+              </button>
+            </div>
+            <figure>
+              <button
+                id="labZoom"
+                class="evidence-image"
+                aria-label="ขยายหน้าหลักฐาน"
+              >
+                <img id="labImage" alt="" loading="lazy" />
+              </button>
+              <figcaption id="labCaption"></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="section section-alt" id="slides">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="topic-label">Presentation Viewer</p>
+            <h2>เอกสารต้นฉบับ</h2>
+            <p>การใช้ prompt ในแง่ต่าง ๆ · GE931-1</p>
+          </div>
+          <div
+            class="viewer"
+            id="viewer"
+            tabindex="0"
+            aria-label="โปรแกรมดูเอกสาร ใช้ปุ่มลูกศรเพื่อเปลี่ยนหน้า"
+          >
+            <div class="viewer-toolbar">
+              <div class="view-modes" role="group" aria-label="รูปแบบการดู">
+                <button id="slideMode" aria-pressed="true">Slide View</button
+                ><button id="pdfMode" aria-pressed="false">PDF View</button>
+              </div>
+              <div class="viewer-links">
+                <a
+                  id="openPdf"
+                  href="assets/presentation.pdf?v=03851ca168"
+                  target="_blank"
+                  rel="noopener"
+                  >เปิดแท็บใหม่ ↗</a
+                ><a
+                  href="assets/presentation.pdf?v=03851ca168"
+                  download="Smart-Green-City.pdf"
+                  >ดาวน์โหลด PDF</a
+                >
+              </div>
+            </div>
+            <div class="slide-stage">
+              <img
+                id="slideImage"
+                src="assets/slides/page-01.jpg"
+                alt="PDF หน้า 1 ปกโครงงาน"
+              />
+              <div id="pdfObject" hidden aria-label="PDF ต้นฉบับ">
+                <canvas
+                  id="pdfCanvas"
+                  role="img"
+                  aria-label="หน้าเอกสาร PDF ที่เรนเดอร์จากต้นฉบับ"
+                ></canvas>
+                <p id="pdfStatus" role="status"></p>
+              </div>
+            </div>
+            <div class="viewer-bottom">
+              <button id="prevPage" aria-label="หน้าก่อนหน้า">← ก่อนหน้า</button
+              ><label for="pageSelect"
+                >หน้า
+                <select id="pageSelect" aria-label="เลือกหน้า"></select></label
+              ><span id="pageCount" aria-live="polite">กำลังโหลดเอกสาร</span
+              ><button id="nextPage" aria-label="หน้าถัดไป">ถัดไป →</button>
+            </div>
+            <p id="viewerStatus" class="source-note" role="status"></p>
+            <details class="page-text">
+              <summary>ข้อความที่อ่านได้จากหน้าปัจจุบัน</summary>
+              <p id="pageText"></p>
+              <p>
+                คำสั่งบางส่วนอยู่ในภาพหน้าจอ
+                โปรดดูภาพต้นฉบับเพื่ออ่านรายละเอียดครบถ้วน
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <strong>Smart Green City</strong>
+        <p>การอนุรักษ์สิ่งแวดล้อมในเมือง · โครงงานเพื่อการเรียนรู้</p>
+        <a href="#home">กลับด้านบน ↑</a>
+      </div>
+    </footer>
+    <dialog id="evidenceDialog" aria-label="ภาพหลักฐานต้นฉบับ">
+      <button id="closeEvidence" autofocus>ปิดภาพ ✕</button
+      ><img
+        id="dialogImage"
+        src="assets/slides/page-03.jpg"
+        alt="หลักฐาน AI Image หน้า 3"
+      />
+      <p>ภาพจาก PDF ต้นฉบับ</p>
+    </dialog>
+    <noscript
+      ><p>
+        เปิด JavaScript เพื่อใช้กราฟและ Prompt Lab
+        <a href="assets/presentation.pdf?v=03851ca168">อ่าน PDF ต้นฉบับ</a>
+      </p></noscript
+    >
+  </body>
+</html>
